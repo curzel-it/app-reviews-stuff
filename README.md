@@ -9,16 +9,16 @@ Get App Store app reviews
 
 optional arguments:
   -h, --help            show this help message and exit
-  --token TOKEN         Bearer Auth Token you got by inspecting the App Store website
-  --apps [APPS ...]     A list of App IDs, space separated
+  --token TOKEN         Bearer Auth Token you got by inspecting the App Store website (just the token).
+  --apps [APPS ...]     A list of App IDs, space separated.
   --platforms [PLATFORMS ...]
-                        List of platforms (iphone, ipad, mac, appletv), space separated
+                        List of platforms (iphone, ipad, mac, appletv), space separated.
   --locale LOCALE       Locale in the usual format, it-IT, en-US, ...
   --max-reviews [MAX_REVIEWS]
-                        Max number of reviews to fetch for each app
-  --take-it-easy        Uses longer delays between requests to avoid rate limit
+                        Max number of reviews to fetch for each app, 100 by default.
+  --take-it-easy        Uses longer delays between requests to avoid rate limit.
   --destination [DESTINATION]
-                        Destination folder
+                        Destination folder.
 ```
 Example, getting 100 reviews for instagram:
 ```

@@ -25,15 +25,15 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument(
   '--token', type=str, 
-  help='Bearer Auth Token you got by inspecting the App Store website (just the token)'
+  help='Bearer Auth Token you got by inspecting the App Store website (just the token).'
 )
 parser.add_argument(
   '--apps', type=str, nargs="*",
-  help='A list of App IDs, space separated'
+  help='A list of App IDs, space separated.'
 )
 parser.add_argument(
   '--platforms', type=str, nargs="*",
-  help='List of platforms (iphone, ipad, mac, appletv), space separated'
+  help='List of platforms (iphone, ipad, mac, appletv), space separated.'
 )
 parser.add_argument(
   '--locale', type=str, 
@@ -41,15 +41,15 @@ parser.add_argument(
 )
 parser.add_argument(
   '--max-reviews', type=int, nargs='?', default=100,
-  help='Max number of reviews to fetch for each app'
+  help='Max number of reviews to fetch for each app, 100 by default.'
 )
 parser.add_argument(
   '--take-it-easy', action='store_true',
-  help='Uses longer delays between requests to avoid rate limit'
+  help='Uses longer delays between requests to avoid rate limit.'
 )
 parser.add_argument(
   '--destination', type=str, nargs='?', default='.',
-  help='Destination folder'
+  help='Destination folder.'
 )
 args = parser.parse_args()
 
