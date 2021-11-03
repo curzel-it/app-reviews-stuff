@@ -13,21 +13,7 @@ def get_reviews_page(auth_token, app_id, locale, platforms, offset=0, per_page=1
     per_page
   )
   response = requests.get(
-    url,
-    headers = {
-      'accept': '*/*',
-      'accept-encoding': 'gzip, deflate, br',
-      'accept-language': 'it,en-US;q=0.9,en;q=0.8',
-      'access-control-request-headers': 'authorization',
-      'access-control-request-method': 'GET',
-      'authorization': 'Bearer ' + auth_token,
-      'origin': 'https://apps.apple.com',
-      'referer': 'https://apps.apple.com/',
-      'sec-fetch-dest': 'empty',
-      'sec-fetch-mode': 'cors',
-      'sec-fetch-site': 'same-site',
-      'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36'
-    }
+    url, headers={'authorization': 'Bearer {0}'.format(auth_token)}
   )
   data = json.loads(response.content).get('data') or []
   return [d['attributes'] for d in data if _is_valid_review(d)]
