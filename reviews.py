@@ -40,7 +40,7 @@ def get_all_reviews(app_id, args):
     if len(new_reviews) == 0: break
     if len(reviews) >= args.max_reviews: break
     
-    min_delay, max_delay = (500, 1500) if args.take_it_easy else (100, 500)
+    min_delay, max_delay = (1000, 2000) if args.take_it_easy else (100, 500)
     delay = float(random.randint(min_delay, max_delay)) / 1000
     time.sleep(delay)
 
