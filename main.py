@@ -9,7 +9,7 @@ def get_and_store_reviews(app_id, args):
   data = { 'reviews': reviews }
   content = json.dumps(data, indent=4, sort_keys=True)
   
-  filename = 'reviews-{0}.json'.format(app_id)
+  filename = 'reviews-{0}-{1}.json'.format(args.locale, app_id)
   path = os.path.join(args.destination, filename)
   f = open(path, 'w')
   f.write(content)

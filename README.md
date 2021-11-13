@@ -30,6 +30,9 @@ python3 main.py \
   --take-it-easy \
   --max-reviews 100
 ```
+```
+python3 main.py --apps 389801252 --platforms iphone ipad --locale en-US --token <token> --take-it-easy --max-reviews 100
+```
 
 ## Where do I get the auth token?
 1. On your browser go to the App Store page for any app

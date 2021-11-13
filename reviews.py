@@ -4,11 +4,14 @@ import time
 import random
 
 def get_reviews_page(auth_token, app_id, locale, platforms, offset=0):
+  lang, country = locale.lower().split("-")
   print('[{0}] Getting reviews, offset: {1}'.format(app_id, offset))
-  url = 'https://amp-api.apps.apple.com/v1/catalog/us/apps/{0}/reviews?l={1}&offset={2}&platform=web&additionalPlatforms={3}&sparseLimit=10'
+  url = 'https://amp-api.apps.apple.com/v1/catalog/{0}/apps/{1}/reviews?l={2}&offset={3}&platform=web&additionalPlatforms={4}&sparseLimit=10'
   url = url.format(
+    country,
     app_id.strip(), 
-    locale, offset, 
+    lang, 
+    offset, 
     ','.join(platforms).replace(' ', '')
   )
   response = requests.get(
